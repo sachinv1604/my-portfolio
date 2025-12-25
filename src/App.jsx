@@ -339,9 +339,14 @@ const Certificates = () => {
   return (
     <section id="certificates" >
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+         <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+        >
           Certificates
-        </h2>
+        </motion.h2>
 
         <div className="relative">
           {/* Image */}
