@@ -438,9 +438,10 @@ const Projects = () => {
         >
           MY PROJECTS   
         </motion.h2>
+        <h2 className="text-center text-gray-400 mb-8">TAP TO VIEW</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, i) => (
+          {projects.map((project, i) => (  <a href={project.link}>
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -449,13 +450,14 @@ const Projects = () => {
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10 }}
               className="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-purple-500/20 transition-shadow"
-            >
+            > 
+
               <div className="relative overflow-hidden group">
-                <img
+                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform group-hover:scale-110"
-                />
+                /> 
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                   <a
                     href={project.link}
@@ -465,6 +467,7 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
+              
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
@@ -479,7 +482,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.div></a>
           ))}
         </div>
       </div>
