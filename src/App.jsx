@@ -258,11 +258,11 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-            About Me
-          </h2>
+          <h1 className="text-4xl md:text-2xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            ABOUT ME
+          </h1>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -273,12 +273,10 @@ const About = () => {
                 <img
                   src={profilee}
                   alt="Profile"
-                  className="w-full h-full object-cover mix-blend-overlay"
+                  className="w-full h-full"
                 />
               </div>
-              <motion.div
-                className="absolute -bottom-4 -right-4 w-34 h-34 bg-yellow-500 rounded-full opacity-100"
-              />
+             
    
             </motion.div>
 
