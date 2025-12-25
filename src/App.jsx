@@ -345,7 +345,7 @@ const Certificates = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
-          Certificates
+          CERTIFICATES
         </motion.h2>
 
         <div className="relative">
@@ -436,7 +436,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
-          My Projects
+          MY PROJECTS
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
