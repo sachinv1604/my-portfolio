@@ -269,7 +269,7 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="w-full h-59 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl overflow-hidden">
+              <div className="w-full h-69 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl overflow-hidden">
                 <img
                   src={profilee}
                   alt="Profile"
