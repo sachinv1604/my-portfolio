@@ -157,7 +157,7 @@ const Hero = () => {
   <h1 className="text-5xl md:text-7xl font-bold text-white text-center md:text-left">
     Hi, I'm{" "}
     <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-      Your SACHIN!
+    SACHIN!
     </span>
   </h1>
 
@@ -383,7 +383,7 @@ const Certificates = () => {
 const Projects = () => {
   const projects = [
     {
-      title: 'whether App',
+      title: 'weather App',
       description: 'A flutter based app to get live whether updates',
       image: wedd,
       tags: ['flutter', 'whether API'],
