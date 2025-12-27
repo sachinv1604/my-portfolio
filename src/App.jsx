@@ -529,7 +529,7 @@ const Contact = () => {
               </div>
               <h3 className="text-white font-semibold mb-2">Email</h3>
               <p className="text-gray-400 text-sm text-center break-all">
-                sachinvernekar29@gmail.com.com
+                sachinvernekar29@gmail.com
               </p>
             </motion.a>
 
