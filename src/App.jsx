@@ -520,7 +520,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Email */}
             <motion.a
-              href="sachinvernekar29@gmail.com"
+              href="mailto:sachinvernekar29@gmail.com"
               whileHover={{ scale: 1.05, y: -5 }}
               className="flex flex-col items-center p-6 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
             >
