@@ -15,6 +15,7 @@ import todd from "./assets/todo.png";
 import budd from "./assets/bus.jpg";
 import mady from "./assets/mani.jpg";
 import podd from "./assets/portf.png";
+import wfodd from "./assets/webfinder.png";
 
 
 
@@ -395,6 +396,13 @@ const Projects = () => {
       image: todd,
       tags: ['flutter'],
       link: 'https://github.com/sachinv1604/flutter-todo-app',
+    },
+    {
+      title: 'WebFinder',
+      description: 'A website to discover the most relevant websites based on user needs and requirements.',
+      image: wfodd,
+      tags: [ 'react', 'nodejs', 'mongodb'],
+      link: 'https://github.com/sachinv1604/WEB_FINDER',
     },
     {
       title: 'landing page website ',
