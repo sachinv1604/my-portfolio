@@ -387,7 +387,7 @@ const Projects = () => {
       description: 'A flutter based app to get live whether updates',
       image: wedd,
       tags: ['flutter', 'whether API'],
-      link: 'https://github.com/sachinv1604/new_weather_app_with_flutter',
+      link: 'https://github.com/sachinv1604/weather_app',
     },
     {
       title: 'todo list app',
