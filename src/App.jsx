@@ -10,6 +10,8 @@ import cert4 from './assets/cer2.jpeg';
 import cert5 from './assets/cer3.jpeg';
 import cert6 from './assets/cer4.jpeg';
 import cert7 from './assets/cer5.jpeg';
+import cert8 from './assets/cer6.jpeg';
+import cert9 from './assets/cer7.jpeg';
 import wedd from "./assets/weather.png";
 import todd from "./assets/todo.png";
 import budd from "./assets/bus.jpg";
@@ -329,6 +331,8 @@ const Certificates = () => {
     cert5,
     cert6,
     cert7,
+    cert8,
+    cert9,
     // Add more imported images
   ];
 
