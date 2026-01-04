@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
           >
             Sachin | Portfolio
 
@@ -107,7 +107,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-gray-900 via-purple-900 to-gray-900"
     >
       
       {/* Animated Background */}
@@ -157,7 +157,7 @@ const Hero = () => {
   {/* NAME */}
   <h1 className="text-5xl md:text-7xl font-bold text-white text-center md:text-left">
     Hi, I'm{" "}
-    <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+    <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
     SACHIN!
     </span>
   </h1>
@@ -189,7 +189,7 @@ const Hero = () => {
             href="#certificates"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-shadow"
+            className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-shadow"
           >
             Certificates
           </motion.a>
@@ -197,7 +197,7 @@ const Hero = () => {
             href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-shadow"
+            className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-shadow"
           >
             View Work
           </motion.a>
@@ -259,7 +259,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-2xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-2xl font-bold text-center mb-12 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             ABOUT ME
           </h1>
 
@@ -270,13 +270,16 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="w-full h-69 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl overflow-hidden">
-                <img
-                  src={profilee}
-                  alt="Profile"
-                  className="w-full h-full"
-                />
-              </div>
+             
+                <div className="flex justify-center items-center w-full">
+                  <div className="relative w-56 h-56 md:w-64 md:h-64 bg-linear-to-br from-purple-500 to-pink-600 rounded-full shadow-xl p-1">
+                    <img
+                      src={profilee}
+                      alt="Profile"
+                      className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
              
    
             </motion.div>
@@ -344,7 +347,7 @@ const Certificates = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
           CERTIFICATES
         </motion.h2>
@@ -442,7 +445,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
           MY PROJECTS   
         </motion.h2>
@@ -466,7 +469,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform group-hover:scale-110"
                 /> 
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
                   <a
                     href={project.link}
                     className="px-4 py-2 bg-purple-500 rounded-full text-white flex items-center gap-2"
@@ -509,7 +512,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
           Get In Touch
         </motion.h2>
