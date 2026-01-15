@@ -112,9 +112,11 @@ const Navbar = () => {
 // CLEAN CODING-THEMED Hero Section - Replace your Hero component
 
 const Hero = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+const { scrollYProgress } = useScroll();
+
+const y = useTransform(scrollYProgress, [0, 0.25], [0, 350]);
+const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
 
   return (
     <section
