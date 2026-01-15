@@ -49,7 +49,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
           >
-            Sachin | Portfolio
+            SACHIN | PORTFOLIO
 
           </motion.div>
 
@@ -100,43 +100,104 @@ const Navbar = () => {
     </motion.nav>
   );
 };
+// CLEAN CODING-THEMED Hero Section - Replace your Hero component
 
-// Hero Section
 const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 200]);
 
+  // Code snippets for animation
+  const codeLines = [
+    "const developer = 'Sachin';",
+    "function buildAmazingThings() {",
+    "import React from 'react';",
+    "npm install awesome",
+    "git commit -m 'feature'",
+    "<Component />",
+    "export default App;",
+    "console.log('Hello World');",
+    "{ skills: ['React', 'Node'] }",
+    "async/await promise",
+    "className='gradient'",
+    "useState(true)",
+  ];
+
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-gray-900 via-purple-900 to-gray-900"
-    >
+  id="home"
+  className="min-h-screen flex items-center justify-center relative overflow-hidden 
+  bg-linear-to-br from-black via-zinc-900 to-black"
+>
+
+      {/* Clean Coding Animation Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        
+        
+
+    
+
+
       
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
+
+        {/* Binary Code Rain Effect */}
+        {[...Array(10)].map((_, i) => (
           <motion.div
-            key={i}
-            className="absolute bg-purple-500 rounded-full opacity-20"
+            key={`binary-${i}`}
+           className="absolute text-emerald-400/25 font-mono text-xs"
+
+
+
             style={{
-              width: Math.random() * 4 + 1,
-              height: Math.random() * 4 + 1,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${5 + i * 10}%`,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
+              y: ["-10%", "110%"],
             }}
             transition={{
-              duration: Math.random() * 3 + 2,
+              duration: 5 + Math.random() * 3,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              ease: "linear",
+              delay: Math.random() * 5,
             }}
-          />
+          >
+            {[...Array(15)].map((_, j) => (
+              <div key={j} style={{ opacity: Math.random() }}>
+                {Math.random() > 0.5 ? '1' : '0'}
+              </div>
+            ))}
+          </motion.div>
         ))}
+
+        {/* Pulsing Gradient Circles */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"
+        />
+        
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl"
+        />
       </div>
 
+      {/* Main Content - KEEP YOUR ORIGINAL CONTENT */}
       <motion.div style={{ y }} className="relative z-10 text-center px-4">
         <motion.div
           initial={{ scale: 0 }}
@@ -146,31 +207,29 @@ const Hero = () => {
         >
           
         </motion.div>
- <br /> <br /> <br />
+        <br /> <br /> <br />
+        
         <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2 }}
-  
-  className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-12 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-12 mb-8"
+        >
+          {/* NAME */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white text-center md:text-left">
+            Hi, I'm{" "}
+            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              SACHIN!
+            </span>
+          </h1>
 
->
- 
-  {/* NAME */}
-  <h1 className="text-5xl md:text-7xl font-bold text-white text-center md:text-left">
-    Hi, I'm{" "}
-    <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-    SACHIN!
-    </span>
-  </h1>
-
-  {/* IMAGE */}
-  <img 
-    src={profileImg}
-    alt="Sachin"
-    className="w-80 h-60 md:w-80 md:h-60  "
-  />
-</motion.div>
+          {/* IMAGE - UNCHANGED */}
+          <img 
+            src={profileImg}
+            alt="Sachin"
+            className="w-80 h-60 md:w-80 md:h-60"
+          />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -178,7 +237,7 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-300 mb-8"
         >
-               BCA Student with a Passion for Technology & Learning
+          BCA Student with a Passion for Technology & Learning
         </motion.p>
 
         <motion.div
@@ -213,7 +272,7 @@ const Hero = () => {
         >
           {[
             { icon: Github, href: 'https://github.com/sachinv1604' },
-            { icon: Linkedin, href: 'https://www.linkedin.com/in/sachin-vernekar-2b38ab289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app   ' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/sachin-vernekar-2b38ab289' },
             { icon: Mail, href: 'mailto:sachinvernekar29@gmail.com' },
           ].map((social, i) => (
             <motion.a
@@ -229,6 +288,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
+      {/* Scroll Indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
@@ -242,15 +302,10 @@ const Hero = () => {
           />
         </div>
       </motion.div>
-
-
-      
     </section>
-
   );
 };
 
-// About Section
 const About = () => {
   return (
     <section id="about" className="py-20 bg-gray-900">
@@ -324,10 +379,10 @@ const Certificates = () => {
 
   // Use your imported images here
   const images = [
-    cert1,
+    cert4,
     cert2,
     cert3,
-    cert4,
+    cert1,
     cert5,
     cert6,
     cert7,
