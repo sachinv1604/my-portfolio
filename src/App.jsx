@@ -101,37 +101,63 @@ const Navbar = () => {
   );
 };
 // CLEAN CODING-THEMED Hero Section - Replace your Hero component
+
 const Hero = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 200]);
+
+  // Code snippets for animation
+  const codeLines = [
+    "const developer = 'Sachin';",
+    "function buildAmazingThings() {",
+    "import React from 'react';",
+    "npm install awesome",
+    "git commit -m 'feature'",
+    "<Component />",
+    "export default App;",
+    "console.log('Hello World');",
+    "{ skills: ['React', 'Node'] }",
+    "async/await promise",
+    "className='gradient'",
+    "useState(true)",
+  ];
 
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden 
-      bg-linear-to-br from-black via-zinc-900 to-black"
-    >
+  id="home"
+  className="min-h-screen flex items-center justify-center relative overflow-hidden 
+  bg-linear-to-br from-black via-zinc-900 to-black"
+>
+
       {/* Clean Coding Animation Background */}
       <div className="absolute inset-0 overflow-hidden">
         
-        {/* Binary Code Rain Effect - FASTER & INSTANT START */}
-        {[...Array(12)].map((_, i) => (
+        
+
+    
+
+
+      
+
+        {/* Binary Code Rain Effect */}
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={`binary-${i}`}
-            className="absolute text-emerald-400/25 font-mono text-xs"
+           className="absolute text-emerald-400/25 font-mono text-xs"
+
+
+
             style={{
-              left: `${5 + i * 8}%`,
+              left: `${5 + i * 10}%`,
             }}
-            initial={{ y: '-10%' }}
             animate={{
-              y: ['0%', '110%'],
+              y: ["-10%", "110%"],
             }}
             transition={{
-              duration: 3 + Math.random() * 1.5, // Faster - reduced from 5-8 to 3-4.5
+              duration: 5 + Math.random() * 3,
               repeat: Infinity,
               ease: "linear",
-              delay: 0, // Start immediately
+              delay: Math.random() * 5,
             }}
           >
             {[...Array(15)].map((_, j) => (
@@ -171,11 +197,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* Main Content - SMOOTH SCROLL */}
-      <motion.div 
-        style={{ y, opacity }} 
-        className="relative z-10 text-center px-4"
-      >
+      {/* Main Content - KEEP YOUR ORIGINAL CONTENT */}
+      <motion.div style={{ y }} className="relative z-10 text-center px-4">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -189,7 +212,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+          transition={{ delay: 0.2 }}
           className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-12 mb-8"
         >
           {/* NAME */}
@@ -211,7 +234,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
+          transition={{ delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-300 mb-8"
         >
           BCA Student with a Passion for Technology & Learning
@@ -220,7 +243,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          transition={{ delay: 0.6 }}
           className="flex gap-4 justify-center flex-wrap"
         >
           <motion.a
@@ -244,7 +267,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 0.8 }}
           className="flex gap-6 justify-center mt-12"
         >
           {[
@@ -282,6 +305,7 @@ const Hero = () => {
     </section>
   );
 };
+
 const About = () => {
   return (
     <section id="about" className="py-20 bg-gray-900">
@@ -323,14 +347,12 @@ const About = () => {
               viewport={{ once: true }}
               className="text-gray-300 space-y-4"
             >
-            <p className="text-lg leading-relaxed text-left md:text-justify">
-  I am a dedicated BCA student with a current academic CGPA of 9.19, having a strong interest in the IT industry and a passion for learning diverse technologies.
-</p>
-
-<p className="text-lg leading-relaxed text-left md:text-justify">
-  I enjoy building projects, learning new tools, and improving my technical and problem-solving skills. My goal is to grow as a versatile IT professional who can adapt, learn quickly, and contribute effectively in a dynamic work environment.
-</p>
-
+              <p className="text-lg leading-relaxed">
+              I am a dedicated BCA student with a current academic CGPA of 9.19, having a strong interest in the IT industry and a passion for learning diverse technologies.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I enjoy building projects, learning new tools, and improving my technical and problem-solving skills. My goal is to grow as a versatile IT professional who can adapt, learn quickly, and contribute effectively in a dynamic work environment.
+              </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 {['React','Node.js', 'MongoDB', 'Tailwind CSS','AI tools and productivity ','Flutter', 'Power BI (Basics)','Python', 'Java','Linux (Basics)'].map((tech) => (
                   <span
