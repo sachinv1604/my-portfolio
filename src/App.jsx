@@ -59,10 +59,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
           >
-            SACHIN | PORTFOLIO
+            SACHIN | PORTFOLIO 
           </motion.div>
 
           {/* Desktop Menu */}
+         {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <motion.a
@@ -77,13 +78,31 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
+          {/* Info Circle + Mobile Menu Button */}
+          <div className="flex items-center gap-4">
+            {/* Info Circle */}
+            {/* Info Circle */}
+          {/* Info Circle */}
+            <div
+              onClick={() => alert('Fact: Every horizontal binary line spells "SACHIN" in binary!')}
+              className="cursor-pointer hover:scale-110 transition-transform"
+            >
+              <div className="relative w-6 h-6">
+                <div className="absolute inset-0 rounded-full border border-emerald-400/40 animate-pulse"></div>
+                <div className="absolute inset-0.5 bg-emerald-400/20 border border-emerald-400/60 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <span className="text-emerald-400 font-bold text-xs">i</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-white"
+            >
+              {isOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -118,16 +137,19 @@ const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   // Generate random binary strings with varied properties for hacker effect
-  const [binaryColumns] = useState(() => 
-    [...Array(12)].map((_, i) => ({
-      id: i,
-      left: 5 + i * 8,
-      delay: Math.random() * 2.5, // Random start delay (0-2.5s)
-      duration: 4 + Math.random() * 3, // Varied speeds (4-7s)
-      chars: [...Array(20)].map(() => (Math.random() > 0.5 ? "1" : "0")),
-      opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
-    }))
-  );
+ const [binaryColumns] = useState(() => 
+  [...Array(12)].map((_, i) => ({
+    id: i,
+    left: 5 + i * 8,
+    delay: Math.random() * 2.5, // Random start delay (0-2.5s)
+    duration: 4 + Math.random() * 3, // Varied speeds (4-7s)
+    chars: [...Array(20)].map((_, idx) => {
+      const sachinBinary = "01010011010000010100001101001000010010010100111001"; // "SACHIN" in binary
+      return sachinBinary[idx % sachinBinary.length];
+    }),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
+  }))
+);
 
   return (
     <section
@@ -168,7 +190,9 @@ const Hero = () => {
               </div>
             ))}
           </motion.div>
-        ))}
+       ))}
+
+        
 
         {/* Pulsing Gradient Circles */}
         <motion.div
