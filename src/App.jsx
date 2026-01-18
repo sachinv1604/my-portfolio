@@ -112,11 +112,22 @@ const Navbar = () => {
 // CLEAN CODING-THEMED Hero Section - Replace your Hero component
 
 const Hero = () => {
-const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
 
-const y = useTransform(scrollYProgress, [0, 0.25], [0, 350]);
-const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.25], [0, 350]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
+  // Generate random binary strings with varied properties for hacker effect
+  const [binaryColumns] = useState(() => 
+    [...Array(12)].map((_, i) => ({
+      id: i,
+      left: 5 + i * 8,
+      delay: Math.random() * 2.5, // Random start delay (0-2.5s)
+      duration: 4 + Math.random() * 3, // Varied speeds (4-7s)
+      chars: [...Array(20)].map(() => (Math.random() > 0.5 ? "1" : "0")),
+      opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
+    }))
+  );
 
   return (
     <section
@@ -124,30 +135,36 @@ const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
       className="min-h-screen flex items-center justify-center relative overflow-hidden 
       bg-linear-to-br from-black via-zinc-900 to-black"
     >
-      {/* Clean Coding Animation Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Binary Code Rain Effect - FASTER & INSTANT START */}
-        {[...Array(12)].map((_, i) => (
+      {/* Optimized Hacker Rain Effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {binaryColumns.map((col) => (
           <motion.div
-            key={`binary-${i}`}
+            key={col.id}
             className="absolute text-emerald-400/25 font-mono text-xs"
             style={{
-              left: `${5 + i * 8}%`,
+              left: `${col.left}%`,
+              willChange: "transform",
             }}
-            initial={{ y: "-10%" }}
+            initial={{ y: "-20%" }}
             animate={{
-              y: ["0%", "110%"],
+              y: ["0%", "120%"],
             }}
             transition={{
-              duration: 3 + Math.random() * 1.5, // Faster - reduced from 5-8 to 3-4.5
+              duration: col.duration,
               repeat: Infinity,
               ease: "linear",
-              delay: 0, // Start immediately
+              delay: col.delay,
             }}
           >
-            {[...Array(15)].map((_, j) => (
-              <div key={j} style={{ opacity: Math.random() }}>
-                {Math.random() > 0.5 ? "1" : "0"}
+            {col.chars.map((char, j) => (
+              <div 
+                key={j} 
+                style={{ 
+                  opacity: col.opacities[j],
+                  marginBottom: '4px'
+                }}
+              >
+                {char}
               </div>
             ))}
           </motion.div>
@@ -165,6 +182,7 @@ const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
             ease: "easeInOut",
           }}
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"
+          style={{ willChange: "transform, opacity" }}
         />
 
         <motion.div
@@ -179,12 +197,17 @@ const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
             delay: 2,
           }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl"
+          style={{ willChange: "transform, opacity" }}
         />
       </div>
 
       {/* Main Content - SMOOTH SCROLL */}
       <motion.div
-        style={{ y, opacity }}
+        style={{ 
+          y, 
+          opacity,
+          willChange: "transform, opacity"
+        }}
         className="relative z-10 text-center px-4"
       >
         <motion.div
@@ -363,11 +386,10 @@ const About = () => {
 
 //  Skills component
 // Add this component in your App.jsx (after Skills component)
-
 const Certificates = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  // Use your imported images here
   const images = [
     cert4,
     cert2,
@@ -378,58 +400,146 @@ const Certificates = () => {
     cert7,
     cert8,
     cert9,
-    // Add more imported images
   ];
 
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+    }),
   };
 
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const paginate = (newDirection) => {
+    setDirection(newDirection);
+    setCurrentIndex((prev) => {
+      if (newDirection === 1) {
+        return (prev + 1) % images.length;
+      } else {
+        return (prev - 1 + images.length) % images.length;
+      }
+    });
   };
 
   return (
-    <section id="certificates">
-      <div className="max-w-4xl mx-auto px-4">
+    <section id="certificates" className="py-20 bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+          className="text-5xl md:text-6xl font-bold text-center mb-16 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
           CERTIFICATES
         </motion.h2>
 
-        <div className="relative">
-          {/* Image */}
-          <img
-            src={images[currentIndex]}
-            alt={`Certificate ${currentIndex + 1}`}
-            className="w-full h-96 object-contain bg-gray-900 rounded-lg"
-          />
+        {/* Swipeable Certificate Slider */}
+        <div className="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm">
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+              scale: { duration: 0.3 },
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = Math.abs(offset.x) * velocity.x;
 
-          {/* Left Arrow */}
-          <button
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-12 h-12 rounded-full"
+              if (swipe < -10000) {
+                paginate(1);
+              } else if (swipe > 10000) {
+                paginate(-1);
+              }
+            }}
+            className="cursor-grab active:cursor-grabbing"
           >
-            ←
-          </button>
+            <img
+              src={images[currentIndex]}
+              alt={`Certificate ${currentIndex + 1}`}
+              className="w-full h-125 object-contain select-none"
+              draggable="false"
+            />
+          </motion.div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-12 h-12 rounded-full"
+          {/* Swipe Hint */}
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 
+              px-4 py-2 bg-black/50 backdrop-blur-sm rounded-full text-gray-300 text-sm"
           >
-            →
-          </button>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            <span>SWIPE</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </motion.div>
         </div>
+
+        {/* Progress Dots */}
+        <div className="flex justify-center items-center gap-2 mt-8">
+          {images.map((_, i) => (
+            <motion.button
+              key={i}
+              onClick={() => {
+                setDirection(i > currentIndex ? 1 : -1);
+                setCurrentIndex(i);
+              }}
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative"
+            >
+              {i === currentIndex ? (
+                <motion.div
+                  layoutId="activeCert"
+                  className="h-2 w-10 bg-linear-to-r from-purple-500 to-pink-500 rounded-full"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              ) : (
+                <div className="w-2 h-2 bg-gray-600 hover:bg-gray-400 rounded-full transition-colors" />
+              )}
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Certificate Counter */}
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mt-6"
+        >
+          <p className="text-gray-400">
+            <span className="text-purple-400 font-bold text-lg">{currentIndex + 1}</span>
+            <span className="mx-2 text-gray-600">/</span>
+            <span className="text-gray-500">{images.length}</span>
+          </p>
+        </motion.div>
       </div>
     </section>
   );
 };
-
 // Projects Section
 const Projects = () => {
   const projects = [
