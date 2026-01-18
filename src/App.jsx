@@ -458,14 +458,14 @@ const Certificates = () => {
   return (
     <section id="certificates" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
-        <motion.h2
+        <motion.h3
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-5xl md:text-6xl font-bold text-center mb-16 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
         >
-          CERTIFICATES
-        </motion.h2>
+         CERTIFICATES
+        </motion.h3>
 
         {/* Swipeable Certificate Slider */}
         <div className="relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm">
