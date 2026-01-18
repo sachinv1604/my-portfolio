@@ -85,12 +85,12 @@ const Navbar = () => {
           {/* Info Circle */}
             <div
               onClick={() => alert('Fact: Every horizontal binary line spells "SACHIN" in binary!')}
-              className="cursor-pointer hover:scale-110 transition-transform"
+              className="cursor-pointer hover:scale-110 transition-transform opacity-60 hover:opacity-100"
             >
-              <div className="relative w-6 h-6">
-                <div className="absolute inset-0 rounded-full border border-emerald-400/40 animate-pulse"></div>
-                <div className="absolute inset-0.5 bg-emerald-400/20 border border-emerald-400/60 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-emerald-400 font-bold text-xs">i</span>
+              <div className="relative w-5 h-5">
+                <div className="absolute inset-0 rounded-full border border-emerald-400/30 animate-pulse"></div>
+                <div className="absolute inset-0.5 bg-emerald-400/15 border border-emerald-400/50 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <span className="text-emerald-400 font-bold text-[11px]">#</span>
                 </div>
               </div>
             </div>
