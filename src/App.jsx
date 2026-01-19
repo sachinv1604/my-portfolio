@@ -147,7 +147,7 @@ const Hero = () => {
       const sachinBinary = "01010011010000010100001101001000010010010100111001"; // "SACHIN" in binary
       return sachinBinary[idx % sachinBinary.length];
     }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.9),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.6),
   }))
 );
 
