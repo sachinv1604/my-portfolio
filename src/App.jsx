@@ -128,26 +128,22 @@ const Navbar = () => {
     </motion.nav>
   );
 };
-// CLEAN CODING-THEMED Hero Section - Replace your Hero component
+
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
-
   const y = useTransform(scrollYProgress, [0, 0.25], [0, 350]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-
-  // Generate random binary strings with varied properties for hacker effect
- const [binaryColumns] = useState(() => 
-  [...Array(12)].map((_, i) => ({
+  const [binaryColumns] = useState(() => 
+  [...Array(12)].map((_, i) => ({  
     id: i,
     left: 5 + i * 8,
-    delay: Math.random() * 2.5, // Random start delay (0-2.5s)
-    duration: 4 + Math.random() * 3, // Varied speeds (4-7s)
-    chars: [...Array(20)].map((_, idx) => {
-      const sachinBinary = "01010011010000010100001101001000010010010100111001"; // "SACHIN" in binary
-      return sachinBinary[idx % sachinBinary.length];
+    delay: Math.random() * 2.5, 
+    duration: 4 + Math.random() * 3, 
+    chars: [...Array(20)].map((_, idx) => { 
+      const sachinBinary = "01010011010000010100001101001000010010010100111001"; 
     }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.8),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.6),
   }))
 );
 
