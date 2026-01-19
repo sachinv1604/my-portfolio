@@ -147,7 +147,7 @@ const Hero = () => {
       const sachinBinary = "01010011010000010100001101001000010010010100111001"; // "SACHIN" in binary
       return sachinBinary[idx % sachinBinary.length];
     }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.9),
   }))
 );
 
@@ -198,7 +198,7 @@ const Hero = () => {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.6, 0.2],
+            opacity: [0.1, 0.3, 0.1],
           }}
           transition={{
             duration: 8,
@@ -212,7 +212,7 @@ const Hero = () => {
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.1, 0.2, 0.1],
+            opacity: [0.1, 0.3, 0.1],
           }}
           transition={{
             duration: 10,
@@ -313,20 +313,34 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-          />
-        </div>
-      </motion.div>
+     {/* Scroll Indicators - Left and Right */}
+<motion.div
+  animate={{ y: [0, 10, 0] }}
+  transition={{ duration: 2, repeat: Infinity }}
+  className="absolute bottom-8 left-8 md:left-16"
+>
+  <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+    <motion.div
+      animate={{ y: [0, 12, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+      className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+    />
+  </div>
+</motion.div>
+
+<motion.div
+  animate={{ y: [0, 10, 0] }}
+  transition={{ duration: 2, repeat: Infinity }}
+  className="absolute bottom-8 right-8 md:right-16"
+>
+  <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+    <motion.div
+      animate={{ y: [0, 12, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+      className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+    />
+  </div>
+</motion.div>
     </section>
   );
 };
@@ -688,8 +702,6 @@ const Projects = () => {
   );
 };
 
-// Contact Section
-// Replace your Contact component with this
 
 const Contact = () => {
   return (
