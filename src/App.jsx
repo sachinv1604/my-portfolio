@@ -142,8 +142,9 @@ const Hero = () => {
     duration: 4 + Math.random() * 3, 
     chars: [...Array(20)].map((_, idx) => { 
       const sachinBinary = "01010011010000010100001101001000010010010100111001"; 
+      return sachinBinary[idx % sachinBinary.length];
     }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.6),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
   }))
 );
 
