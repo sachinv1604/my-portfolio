@@ -147,7 +147,7 @@ const Hero = () => {
       const sachinBinary = "01010011010000010100001101001000010010010100111001"; // "SACHIN" in binary
       return sachinBinary[idx % sachinBinary.length];
     }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
+    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.8),
   }))
 );
 
@@ -313,32 +313,35 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-     {/* Scroll Indicators - Left and Right */}
+{/* Left Scroll Indicator - Double Chevron */}
 <motion.div
   animate={{ y: [0, 10, 0] }}
   transition={{ duration: 2, repeat: Infinity }}
   className="absolute bottom-8 left-8 md:left-16"
 >
-  <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-    <motion.div
-      animate={{ y: [0, 12, 0] }}
-      transition={{ duration: 1.5, repeat: Infinity }}
-      className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-    />
+  <div className="flex flex-col gap-1">
+    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+    <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
   </div>
 </motion.div>
 
+{/* Right Scroll Indicator - Double Chevron */}
 <motion.div
   animate={{ y: [0, 10, 0] }}
   transition={{ duration: 2, repeat: Infinity }}
   className="absolute bottom-8 right-8 md:right-16"
 >
-  <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-    <motion.div
-      animate={{ y: [0, 12, 0] }}
-      transition={{ duration: 1.5, repeat: Infinity }}
-      className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-    />
+  <div className="flex flex-col gap-1">
+    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+    <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
   </div>
 </motion.div>
     </section>
