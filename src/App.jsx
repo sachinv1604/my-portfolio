@@ -12,6 +12,7 @@ import {
   Rocket,
   MessageCircle,
   Smartphone,
+  Briefcase,
 } from "lucide-react";
 import profileImg from "./assets/ai.png";
 import profilee from "./assets/sachin.jpeg";
@@ -292,6 +293,16 @@ const Hero = () => {
                hover:scale-105 transition-transform duration-300 flex items-center gap-2"
           >
             <Smartphone className="w-5 h-5" /> Download EduTrack App
+          </motion.a>
+          <motion.a
+            href="https://idofreelance.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-linear-to-r from-blue-500 to-indigo-600 
+               text-white font-semibold rounded-full shadow-lg
+               hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+          >
+            <Briefcase className="w-5 h-5" /> idofreelance
           </motion.a>
         </motion.div>
         <motion.div
