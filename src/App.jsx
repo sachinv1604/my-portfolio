@@ -11,6 +11,7 @@ import {
   Sparkles,
   Rocket,
   MessageCircle,
+  Smartphone,
 } from "lucide-react";
 import profileImg from "./assets/ai.png";
 import profilee from "./assets/sachin.jpeg";
@@ -281,6 +282,16 @@ const Hero = () => {
                hover:scale-105 transition-transform duration-300"
           >
             Download CV
+          </motion.a>
+          <motion.a
+            href="https://drive.google.com/file/d/1lQApjOg0oF72q1i8zBbwtzi0arwc-_tj/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-linear-to-r from-emerald-500 to-teal-600 
+               text-white font-semibold rounded-full shadow-lg
+               hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+          >
+            <Smartphone className="w-5 h-5" /> Download EduTrack App
           </motion.a>
         </motion.div>
         <motion.div
@@ -628,11 +639,11 @@ const Projects = () => {
       link: "#",
     },
     {
-      title: " college bus transportation app using react-native",
-      description: "coming soon...!",
+      title: "EduTrack - College Bus Transportation App",
+      description: "A React Native app for tracking and managing college bus transportation. Download now to try it out!",
       image: budd,
-      tags: ["react-native", "mongodb"],
-      link: "https://github.com/sachinv1604/native-bus-app",
+      tags: ["react-native", "mongodb", "android"],
+      link: "https://drive.google.com/file/d/1lQApjOg0oF72q1i8zBbwtzi0arwc-_tj/view?usp=drivesdk",
     },
   ];
 
@@ -651,9 +662,13 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
-            <a href={project.link}>
+            <a 
+              href={project.link}
+              target={project.link.startsWith("http") && project.link !== "#" ? "_blank" : undefined}
+              rel={project.link.startsWith("http") && project.link !== "#" ? "noopener noreferrer" : undefined}
+              key={project.title}
+            >
               <motion.div
-                key={project.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -668,12 +683,9 @@ const Projects = () => {
                     className="w-full h-48 object-cover transition-transform group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
-                    <a
-                      href={project.link}
-                      className="px-4 py-2 bg-purple-500 rounded-full text-white flex items-center gap-2"
-                    >
+                    <span className="px-4 py-2 bg-purple-500 rounded-full text-white flex items-center gap-2">
                       View Project <ExternalLink className="w-4 h-4" />
-                    </a>
+                    </span>
                   </div>
                 </div>
 
