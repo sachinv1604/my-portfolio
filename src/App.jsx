@@ -276,13 +276,14 @@ const Hero = () => {
           className="flex gap-4 justify-center flex-wrap"
         >
           <motion.a
-            href="/Sachin_Vernekar_CV.pdf"
-            download
-            className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 
+            href="https://idofreelance.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-linear-to-r from-blue-500 to-indigo-600 
                text-white font-semibold rounded-full shadow-lg
-               hover:scale-105 transition-transform duration-300"
+               hover:scale-105 transition-transform duration-300 flex items-center gap-2"
           >
-            Download CV
+            <Briefcase className="w-5 h-5" /> idofreelance
           </motion.a>
           <motion.a
             href="https://drive.google.com/file/d/1lQApjOg0oF72q1i8zBbwtzi0arwc-_tj/view?usp=drivesdk"
@@ -295,14 +296,13 @@ const Hero = () => {
             <Smartphone className="w-5 h-5" /> Download EduTrack App
           </motion.a>
           <motion.a
-            href="https://idofreelance.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-linear-to-r from-blue-500 to-indigo-600 
+            href="/Sachin_Vernekar_CV.pdf"
+            download
+            className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 
                text-white font-semibold rounded-full shadow-lg
-               hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+               hover:scale-105 transition-transform duration-300"
           >
-            <Briefcase className="w-5 h-5" /> idofreelance
+            Download CV
           </motion.a>
         </motion.div>
         <motion.div
