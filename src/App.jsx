@@ -13,6 +13,7 @@ import {
   MessageCircle,
   Smartphone,
   Briefcase,
+  Globe,
 } from "lucide-react";
 import profileImg from "./assets/ai.png";
 import profilee from "./assets/sachin.jpeg";
@@ -303,6 +304,16 @@ const Hero = () => {
                hover:scale-105 transition-transform duration-300"
           >
             Download CV
+          </motion.a>
+          <motion.a
+            href="https://web-finder-self.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-linear-to-r from-cyan-500 to-blue-600 
+               text-white font-semibold rounded-full shadow-lg
+               hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+          >
+            <Globe className="w-5 h-5" /> Visit WebFinder
           </motion.a>
         </motion.div>
         <motion.div
@@ -623,7 +634,7 @@ const Projects = () => {
         "A website to discover the most relevant websites based on user needs and requirements.",
       image: wfodd,
       tags: ["react", "nodejs", "mongodb"],
-      link: "https://github.com/sachinv1604/WEB_FINDER",
+      link: "https://web-finder-self.vercel.app/",
     },
     {
       title: "landing page website ",
