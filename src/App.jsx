@@ -286,7 +286,7 @@ const Hero = () => {
             <Briefcase className="w-5 h-5" /> idofreelance
           </motion.a>
           <motion.a
-            href="https://drive.google.com/file/d/1lQApjOg0oF72q1i8zBbwtzi0arwc-_tj/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/1jk_vCFNwbLc0GH9oUgnvSQZGGnFCkIRu/view?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 bg-linear-to-r from-emerald-500 to-teal-600 
@@ -654,7 +654,7 @@ const Projects = () => {
       description: "A React Native app for tracking and managing college bus transportation. Download now to try it out!",
       image: budd,
       tags: ["react-native", "mongodb", "android"],
-      link: "https://drive.google.com/file/d/1lQApjOg0oF72q1i8zBbwtzi0arwc-_tj/view?usp=drivesdk",
+      link: "https://drive.google.com/file/d/1jk_vCFNwbLc0GH9oUgnvSQZGGnFCkIRu/view?usp=drivesdk",
     },
   ];
 
