@@ -14,7 +14,6 @@ import {
   Smartphone,
   Briefcase,
   Globe,
-  Gamepad2,
 } from "lucide-react";
 import profileImg from "./assets/ai.png";
 import profilee from "./assets/sachin.jpeg";
@@ -45,7 +44,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "About", "Certificates", "Projects", "Playground", "Contact"];
+  const navItems = ["Home", "About", "Certificates", "Projects", "Contact"];
 
   return (
     <motion.nav
@@ -738,81 +737,6 @@ const Projects = () => {
 };
 
 
-// Playground Component
-const Playground = () => {
-  return (
-    <section id="playground" className="py-20 bg-linear-to-br from-gray-950 via-purple-950/10 to-gray-950">
-      <div className="max-w-6xl mx-auto px-0 sm:px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent flex items-center justify-center gap-3 px-4"
-        >
-          <Gamepad2 className="w-8 h-8 text-purple-400 animate-bounce" /> PLAYGROUND
-        </motion.h2>
-        <p className="text-gray-400 text-center mb-12 max-w-lg mx-auto px-4">
-          Need a break? Challenge yourself or play online Chess directly from my portfolio!
-        </p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative mx-auto max-w-4xl rounded-none sm:rounded-2xl overflow-hidden shadow-2xl border-y sm:border border-purple-500/20 bg-gray-900 py-3 sm:p-4 shadow-purple-500/10"
-        >
-          {/* Glassmorphic Top Bar resembling a retro console or window */}
-          <div className="flex items-center justify-between pb-3 px-4 sm:px-2 border-b border-gray-800 mb-3">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-red-500" />
-              <span className="w-3 h-3 rounded-full bg-yellow-500" />
-              <span className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-xs text-gray-500 font-mono ml-2 hidden sm:inline">chess-online.exe</span>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span className="flex h-2.5 w-2.5 relative">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <span className="text-xs font-semibold text-emerald-400 font-mono">LIVE GAME</span>
-              </div>
-              <a 
-                href="https://playgama.com/export/game/chess-online-playing" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-1.5 px-3 py-1 bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 text-xs font-semibold rounded-lg transition-colors border border-purple-500/30"
-              >
-                <span>Fullscreen</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-
-          <div className="relative w-full overflow-hidden rounded-none sm:rounded-xl bg-black aspect-video md:h-[550px] md:aspect-auto">
-            <iframe
-              src="https://playgama.com/export/game/chess-online-playing"
-              allow="fullscreen; accelerometer; camera; clipboard-read; clipboard-write; screen-wake-lock; speaker-selection; web-share; geolocation; gyroscope; microphone; xr-spatial-tracking; autoplay; encrypted-media; picture-in-picture; payment; publickey-credentials-get; publickey-credentials-create; storage-access; attribution-reporting; browsing-topics"
-              className="w-full h-full border-0 absolute inset-0"
-              title="Chess Online"
-            />
-          </div>
-          
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-2">
-            <p className="text-sm text-gray-400 text-center sm:text-left">
-              📱 Tip: Rotate your phone to landscape or tap "Fullscreen" for the best experience!
-            </p>
-            <div className="text-xs text-gray-500 font-mono bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700">
-              🎮 Click & Drag / Tap & Move
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-800">
@@ -941,7 +865,6 @@ export default function App() {
       <About />
       <Certificates />
       <Projects />
-      <Playground />
       <Contact />
       <Footer />
     </div>
