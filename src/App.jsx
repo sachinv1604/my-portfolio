@@ -51,8 +51,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-gray-900/95 backdrop-blur-sm shadow-lg"
-          : "bg-transparent"
+        ? "bg-gray-900/95 backdrop-blur-sm shadow-lg"
+        : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -296,7 +296,7 @@ const Hero = () => {
             <Smartphone className="w-5 h-5" /> Download EduTrack App
           </motion.a>
           <motion.a
-            href="/SACHIN_N_VERNEKAR_CV(1).pdf"
+            href="/myrresume.pdf"
             download
             className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 
                text-white font-semibold rounded-full shadow-lg
