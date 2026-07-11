@@ -50,11 +50,10 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed w-full left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-gray-900/95 backdrop-blur-sm shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between h-16">
@@ -62,11 +61,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
           >
-            SACHIN | PORTFOLIO 
+            SACHIN | PORTFOLIO
           </motion.div>
 
           {/* Desktop Menu */}
-         {/* Desktop Menu */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <motion.a
@@ -85,7 +84,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             {/* Info Circle */}
             {/* Info Circle */}
-          {/* Info Circle */}
+            {/* Info Circle */}
             <div
               onClick={() => alert('Fact: Every horizontal binary line spells "SACHIN" in binary!')}
               className="cursor-pointer hover:scale-110 transition-transform opacity-60 hover:opacity-100"
@@ -137,19 +136,19 @@ const Hero = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.25], [0, 350]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const [binaryColumns] = useState(() => 
-  [...Array(12)].map((_, i) => ({  
-    id: i,
-    left: 5 + i * 8,
-    delay: Math.random() * 2.5, 
-    duration: 4 + Math.random() * 3, 
-    chars: [...Array(20)].map((_, idx) => { 
-      const sachinBinary = "01010011010000010100001101001000010010010100111001"; 
-      return sachinBinary[idx % sachinBinary.length];
-    }),
-    opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
-  }))
-);
+  const [binaryColumns] = useState(() =>
+    [...Array(12)].map((_, i) => ({
+      id: i,
+      left: 5 + i * 8,
+      delay: Math.random() * 2.5,
+      duration: 4 + Math.random() * 3,
+      chars: [...Array(20)].map((_, idx) => {
+        const sachinBinary = "01010011010000010100001101001000010010010100111001";
+        return sachinBinary[idx % sachinBinary.length];
+      }),
+      opacities: [...Array(20)].map(() => 0.1 + Math.random() * 0.5),
+    }))
+  );
 
   return (
     <section
@@ -179,9 +178,9 @@ const Hero = () => {
             }}
           >
             {col.chars.map((char, j) => (
-              <div 
-                key={j} 
-                style={{ 
+              <div
+                key={j}
+                style={{
                   opacity: col.opacities[j],
                   marginBottom: '4px'
                 }}
@@ -190,9 +189,9 @@ const Hero = () => {
               </div>
             ))}
           </motion.div>
-       ))}
+        ))}
 
-        
+
 
         {/* Pulsing Gradient Circles */}
         <motion.div
@@ -227,8 +226,8 @@ const Hero = () => {
 
       {/* Main Content - SMOOTH SCROLL */}
       <motion.div
-        style={{ 
-          y, 
+        style={{
+          y,
           opacity,
           willChange: "transform, opacity"
         }}
@@ -297,7 +296,7 @@ const Hero = () => {
             <Smartphone className="w-5 h-5" /> Download EduTrack App
           </motion.a>
           <motion.a
-            href="/Sachin_Vernekar_CV.pdf"
+            href="/SACHIN_N_VERNEKAR_CV(1).pdf"
             download
             className="px-8 py-3 bg-linear-to-r from-purple-500 to-pink-600 
                text-white font-semibold rounded-full shadow-lg
@@ -343,37 +342,37 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-{/* Left Scroll Indicator - Double Chevron */}
-<motion.div
-  animate={{ y: [0, 10, 0] }}
-  transition={{ duration: 2, repeat: Infinity }}
-  className="absolute bottom-8 left-8 md:left-16"
->
-  <div className="flex flex-col gap-1">
-    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-    <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  </div>
-</motion.div>
+      {/* Left Scroll Indicator - Double Chevron */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-8 md:left-16"
+      >
+        <div className="flex flex-col gap-1">
+          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </motion.div>
 
-{/* Right Scroll Indicator - Double Chevron */}
-<motion.div
-  animate={{ y: [0, 10, 0] }}
-  transition={{ duration: 2, repeat: Infinity }}
-  className="absolute bottom-8 right-8 md:right-16"
->
-  <div className="flex flex-col gap-1">
-    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-    <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  </div>
-</motion.div>
+      {/* Right Scroll Indicator - Double Chevron */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 right-8 md:right-16"
+      >
+        <div className="flex flex-col gap-1">
+          <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+          <svg className="w-6 h-6 text-gray-400 -mt-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </motion.div>
     </section>
   );
 };
@@ -505,7 +504,7 @@ const Certificates = () => {
   return (
     <section id="certificates" className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
-       < motion.h2
+        < motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -684,7 +683,7 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
-            <a 
+            <a
               href={project.link}
               target={project.link.startsWith("http") && project.link !== "#" ? "_blank" : undefined}
               rel={project.link.startsWith("http") && project.link !== "#" ? "noopener noreferrer" : undefined}
